@@ -1,7 +1,8 @@
-@import "./bourbon/bourbon";
-@import "./neat/neat";
+@import "bourbon/bourbon";
+@import "neat/neat";
 
-// Credit: http://hellohappy.org/css3-buttons/
+// cupid-green mixin from Chad Mazzola
+// http://hellohappy.org/css3-buttons/
 @mixin cupid-green {
   @include linear-gradient(top, #7fbf4d, #63a62f);
   border: 1px solid #63a62f;
@@ -13,7 +14,7 @@
   padding: 7px 0 8px 0;
   text-align: center;
   text-shadow: 0 -1px 0 #4c9021;
-  width: 150px;
+  width: 100px;
 
   &:hover {
     @include linear-gradient(top, #76b347, #5e9e2e);
@@ -41,8 +42,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: #476EC4;
+  color: #484848;
+  padding-bottom: 5px;
   text-decoration: none;
+
+  &:hover {
+    color: #376fe0;
+  }
 }
 
 .container {
@@ -66,14 +72,21 @@ a {
   #nav {
     @include span-columns(9);
     text-transform: uppercase;
-    font-weight: bold;
 
     ul {
       list-style: none;
 
       li {
-        display: inline;
-        margin-right: 20px;
+        display: inline-block;
+        // padding-right: 10px;
+        // padding-left: 10px;
+        text-align: center;
+        width: 130px;
+        border-right: 1px solid #bbb;
+
+        &:last-child {
+          border: none;
+        }
       }
 
       .active {
@@ -92,6 +105,7 @@ a {
   .main-content {
     height: 150px;
     text-align: justify;
+    font-weight: 300;
   }
 }
 
@@ -102,6 +116,7 @@ a {
 .form {
   label {
     display: block;
+    font-weight: 400;
   }
 
   input[type="text"] {
@@ -115,5 +130,18 @@ a {
 
   input[type="submit"] {
     @include cupid-green;
+  }
+
+  .input-avg {
+    width: 47% !important;
+  }
+
+  .first {
+    @include span-columns(2 of 4);
+  }
+
+  .second {
+    @include span-columns(2 of 4);
+    @include omega;
   }
 }

@@ -17,21 +17,21 @@
     %h3 Form
     .main-content
       %form{class: 'form', action: "/form", method: "post"}
-        .field
+        .field.first
           %label{for: 'name'} Name
           %input{type: 'text', name: 'name'}
-        .field
+        .field.second
           %label{for: 'email'} Email
           %input{type: 'text', name: 'email'}
-        .field
-          %label{for: 'city'} City
+        .field.first
+          %label{for: 'city'} City / Area
           %input{type: 'text', name: 'city'}
-        .field
+        .field.second
           %label{for: 'provider'} Utility Provider
           %input{type: 'text', name: 'provider'}
         .field
           %label{for: 'avg'} Avg. Bill or Annual Kilowatt Hours
-          %input{type: 'text', name: 'avg'}
+          %input{type: 'text', name: 'avg', class: 'input-avg'}
         .actions
           %input{type: 'submit', value: 'Submit'}
 
