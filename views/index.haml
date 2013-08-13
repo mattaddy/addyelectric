@@ -1,1 +1,37 @@
-addyelectric.com
+= haml :_slideshow
+
+.container
+  #who
+    %h3 Who is Addy Electric?
+    .main-content
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat.
+  #why
+    %h3 Why Addy Electric?
+    .main-content
+      Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur.
+  #save
+    %h3 Form
+    .main-content
+      %form{class: 'form', action: "/form", method: "post"}
+        .field
+          %label{for: 'name'} Name
+          %input{type: 'text', name: 'name'}
+        .field
+          %label{for: 'email'} Email
+          %input{type: 'text', name: 'email'}
+        .field
+          %label{for: 'city'} City
+          %input{type: 'text', name: 'city'}
+        .field
+          %label{for: 'provider'} Utility Provider
+          %input{type: 'text', name: 'provider'}
+        .field
+          %label{for: 'avg'} Avg. Bill or Annual Kilowatt Hours
+          %input{type: 'text', name: 'avg'}
+        .actions
+          %input{type: 'submit', value: 'Submit'}
+

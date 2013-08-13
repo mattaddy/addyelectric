@@ -2,6 +2,7 @@ module AddyElectric
   class Application < Sinatra::Base
     set :root, File.dirname(__FILE__)
     set :haml, format: :html5
+    set :scss, { load_paths: [ "#{settings.root}/assets/stylesheets" ] }
 
     register Sinatra::AssetPack
 
@@ -10,7 +11,7 @@ module AddyElectric
       serve '/css',    from: File.join('assets', 'stylesheets')
       serve '/images', from: File.join('assets', 'images')
 
-      js  :app, ['/js/jquery.js', '/js/jquery*.js', '/js/app.js']
+      js  :app, ['/js/jquery.js', '/js/jquery.*.js', '/js/app.js']
       css :app, ['/css/*.css']
     end
 

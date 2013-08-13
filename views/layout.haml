@@ -2,9 +2,13 @@
 %html
   %head
     %title Addy Electric
-    != js  :app
+    %link{href: 'http://fonts.googleapis.com/css?family=Open+Sans:400,300', rel: 'stylesheet'}
     != css :app
   %body
-    #content
-      .container
-        = yield
+    = haml :_nav
+
+    = yield
+
+    = haml :_footer
+
+    != js  :app
