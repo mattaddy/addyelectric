@@ -67,10 +67,10 @@ a {
 }
 
 #nav-wrapper {
-  font-family: 'Arial';
 
   #nav {
     @include span-columns(9);
+    padding-top: 5px;
     text-transform: uppercase;
 
     ul {
@@ -78,8 +78,6 @@ a {
 
       li {
         display: inline-block;
-        // padding-right: 10px;
-        // padding-left: 10px;
         text-align: center;
         width: 130px;
         border-right: 1px solid #bbb;
@@ -87,9 +85,6 @@ a {
         &:last-child {
           border: none;
         }
-      }
-
-      .active {
       }
     }
   }
