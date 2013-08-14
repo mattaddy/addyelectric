@@ -2,5 +2,5 @@ $ ->
 
   $('#slider').nivoSlider
       effect: 'sliceDownRight'
-      pauseTime: 5000
+      pauseTime: 6000
       controlNav: false

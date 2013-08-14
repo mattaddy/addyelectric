@@ -90,17 +90,28 @@ a {
   }
 }
 
-#slider {
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-}
-
 #who, #why, #save {
   @include span-columns(4);
+
   .main-content {
     height: 150px;
     text-align: justify;
     font-weight: 300;
+    padding-top: 10px;
+  }
+
+  h3 {
+    border-bottom: 1px solid #ccc;
+  }
+
+  .big {
+    font-family: 'Droid Sans';
+    font-size: 4em;
+    text-transform: lowercase;
+  }
+  .small {
+    display: inline-block;
+    padding-bottom: 5px;
   }
 }
 
@@ -108,10 +119,27 @@ a {
   padding-right: 20px;
 }
 
+#who {
+  .small {
+    padding-left: 25px;
+  }
+}
+
+#why {
+  .small {
+    padding-left: 42px;
+  }
+}
+
+#save {
+  .small {
+    padding-left: 40px;
+  }
+}
+
 .form {
   label {
     display: block;
-    font-weight: 400;
   }
 
   input[type="text"] {
@@ -139,4 +167,8 @@ a {
     @include span-columns(2 of 4);
     @include omega;
   }
+}
+
+#footer {
+  background-color: #efefef;
 }
