@@ -18,5 +18,25 @@ module AddyElectric
     get '/' do
       haml :index
     end
+
+    get '/services' do
+      haml :services
+    end
+
+    get '/resources' do
+      haml :resources
+    end
+
+    get '/about' do
+      haml :about
+    end
+
+    get '/contact' do
+      haml :contact
+    end
+
+    get '/why-ae' do
+      haml :why
+    end
   end
 end
