@@ -19,8 +19,16 @@ module AddyElectric
       haml :index
     end
 
-    get '/services' do
-      haml :services
+    get '/services/electrical' do
+      haml :'services/electrical'
+    end
+
+    get '/services/solar' do
+      haml :'services/solar'
+    end
+
+    get '/services/pools' do
+      haml :'services/pools'
     end
 
     get '/resources' do

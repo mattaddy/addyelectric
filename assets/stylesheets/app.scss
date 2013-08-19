@@ -39,6 +39,15 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 5px;
+  font-weight: 300;
+}
+
+h2 {
+  border-bottom: 1px solid #ccc;
+}
+
+p {
+  text-align: justify;
 }
 
 a {
@@ -96,6 +105,26 @@ a {
   }
 }
 
+#subnav {
+  ul {
+    list-style: none;
+
+    li {
+      display: inline-block;
+      text-align: center;
+      width: 33%;
+    }
+
+    a {
+      color: #484848 !important;
+    }
+  }
+}
+
+.active {
+  border-bottom: 1px solid;
+}
+
 #who, #why, #save {
   @include span-columns(4);
 
@@ -103,6 +132,11 @@ a {
     text-align: justify;
     font-weight: 300;
     padding-top: 10px;
+    margin-bottom: 10px;
+
+    form {
+      margin-top: 10px;
+    }
 
     h4 {
       display: block;
@@ -112,7 +146,6 @@ a {
   }
 
   .learn-more {
-    margin-top: 10px;
     text-align: right;
     font-weight: 400;
   }
