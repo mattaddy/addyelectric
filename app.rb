@@ -27,7 +27,7 @@ module AddyElectric
       haml :'services/solar'
     end
 
-    get '/services/pools' do
+    get '/services/pool' do
       haml :'services/pools'
     end
 

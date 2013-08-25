@@ -4,10 +4,17 @@
   #nav-wrapper
     #logo
       Logo
-    #nav
-      %ul
+    %nav#top-nav
+      %ul.outer
         %li
-          %a{href: '/services/electrical'} services
+          %a{href: '#', class: 'dropdown-link'} services
+          %ul.fallback.inner
+            %li
+              %a{href: '/services/electrical'} Electrical
+            %li
+              %a{href: '/services/solar'} Solar
+            %li
+              %a{href: '/services/pool'} Pool
         %li
           %a{href: '/resources'} resources
         %li

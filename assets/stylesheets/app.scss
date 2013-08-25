@@ -64,6 +64,66 @@ a {
   @include outer-container;
 }
 
+.sidebar {
+  @include span-columns(4);
+  margin-top: 30px;
+  padding: 20px;
+  background: #F0F0F0;
+  position: relative;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    top: 50%;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    -moz-border-radius: 100px / 10px;
+    border-radius: 100px / 10px;
+  }
+
+  h2 {
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .field {
+    @include row;
+  }
+
+  label {
+    display: inline-block;
+    vertical-align: top;
+    width: 70px;
+  }
+
+  input[type="text"], textarea {
+    width: 190px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 3px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  textarea {
+    height: 100px;
+  }
+
+  input[type="submit"] {
+    @include cupid-green;
+  }
+}
+
 #top-bar {
   text-align: right;
   font-weight: 300;
@@ -80,54 +140,78 @@ a {
 }
 
 #nav-wrapper {
+  margin-bottom: 10px;
 
-  #nav {
+  #top-nav {
     @include span-columns(9);
-    padding-top: 5px;
-    text-transform: uppercase;
     font-family: 'Doppio One', 'Arial', 'sans-serif';
     font-size: 1.1em;
 
-    ul {
+    ul.outer {
       list-style: none;
+      text-transform: uppercase;
 
-      li {
+      > li {
         display: inline-block;
         text-align: center;
         width: 130px;
         border-right: 1px solid #bbb;
+        float: left;
+        padding: 10px 5px;
 
         &:last-child {
           border: none;
         }
+
+        &:hover {
+          background-color: #eee;
+        }
       }
     }
 
+    ul.inner {
+      z-index: 100;
+      text-transform: none;
+      position: absolute;
+      border: 1px solid #e3e3e3;
+      border-top: none;
+      width: 130px;
+      margin: 10px 0 0 -5px;
+      background-color: #eee;
+
+      > li {
+        margin-left: -40px;
+        display: inline-block;
+        width: 128px;
+      }
+
+      a {
+        display: block;
+        padding: 10px 5px;
+        color:#444;
+      }
+
+      li:hover a {
+        background: #ddd;
+      }
+    }
+
+    ul.fallback {
+      display:none;
+    }
+
     a {
       color: #484848 !important;
+
+      &:hover {
+        border: none;
+      }
     }
   }
+
 }
 
-#subnav {
-  ul {
-    list-style: none;
-
-    li {
-      display: inline-block;
-      text-align: center;
-      width: 33%;
-    }
-
-    a {
-      color: #484848 !important;
-    }
-  }
-}
-
-.active {
-  border-bottom: 1px solid;
-}
+/* index */
 
 #who, #why, #save {
   @include span-columns(4);
@@ -221,6 +305,29 @@ a {
     @include span-columns(2 of 4);
     @include omega;
   }
+}
+
+/* services */
+
+#electrical {
+  @include span-columns(8);
+  h1 {
+    font-family: 'Doppio One', 'Arial', 'sans-serif';
+  }
+}
+
+#solar {
+ @include span-columns(8);
+ h1 {
+   font-family: 'Doppio One', 'Arial', 'sans-serif';
+ }
+}
+
+#pools {
+ @include span-columns(8);
+ h1 {
+   font-family: 'Doppio One', 'Arial', 'sans-serif';
+ }
 }
 
 #footer {
