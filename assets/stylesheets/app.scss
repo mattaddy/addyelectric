@@ -58,7 +58,7 @@ a {
   text-decoration: none;
 
   &:hover {
-    color: #376fe0;
+    color: #1F2CBF;
     border-bottom: 1px solid;
   }
 }
@@ -73,7 +73,6 @@ h1 {
 
 .wrapper {
   min-height: 100%;
-  /* equal to footer height */
   margin-bottom: -210px;
 
   &:after {
@@ -85,6 +84,7 @@ h1 {
 
 .sidebar {
   @include span-columns(4);
+  @include shift(1);
   margin-top: 30px;
   padding: 20px;
   background: #F0F0F0;
@@ -335,11 +335,11 @@ h1 {
 /* services */
 
 #electrical {
-  @include span-columns(8);
+  @include span-columns(7);
 }
 
 #solar {
- @include span-columns(8);
+ @include span-columns(7);
  h1 {
    font-family: 'Doppio One', 'Arial', 'sans-serif';
  }
@@ -356,7 +356,7 @@ dd {
 }
 
 #pools {
- @include span-columns(8);
+ @include span-columns(7);
 }
 
 /* technical */
@@ -387,6 +387,45 @@ dd {
     padding-bottom: 5px;
   }
 }
+
+/* about */
+
+#about {
+  @include span-columns(7);
+}
+
+#remark {
+  @include span-columns(5);
+}
+
+.quote {
+  position:relative;
+  padding:15px 30px;
+  margin:0;
+  background:#efefef;
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+}
+
+/* display of quote author (alternatively use a class on the element following the blockquote) */
+.quote + p {margin:15px 0 2em 85px; font-style:italic;}
+
+/* creates the triangle */
+.quote:after {
+  content:"";
+  position:absolute;
+  bottom:-50px;
+  left:50px;
+  border-width:0 20px 50px 0px;
+  border-style:solid;
+  border-color:transparent #efefef;
+    /* reduce the damage in FF3.0 */
+    display:block;
+    width:0;
+}
+
+/* footer */
 
 #footer {
   border-top: 1px solid darken(#efefef, 20%);
