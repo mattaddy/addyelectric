@@ -31,8 +31,20 @@ module AddyElectric
       haml :'services/pools'
     end
 
-    get '/resources' do
-      haml :resources
+    get '/resources/news' do
+      haml :'resources/news'
+    end
+
+    get '/resources/articles' do
+      haml :'resources/articles'
+    end
+
+    get '/resources/technical' do
+      haml :'resources/technical'
+    end
+
+    get '/resources/links' do
+      haml :'resources/links'
     end
 
     get '/about' do

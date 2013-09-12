@@ -29,12 +29,17 @@
   }
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: 'Open Sans', Arial;
   font-weight: 400;
   color: #484848;
   font-size: 0.9em;
+  text-align: justify;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -43,15 +48,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-  text-align: justify;
-
   h2 {
     border-bottom: 1px solid #ccc;
   }
 }
 
 a {
-  color: #3149D4;
+  color: #1B2594;
   text-decoration: none;
 
   &:hover {
@@ -60,8 +63,24 @@ a {
   }
 }
 
+h1 {
+  font-family: 'Doppio One', 'Arial', 'sans-serif';
+}
+
 .container {
   @include outer-container;
+}
+
+.wrapper {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -210px;
+
+  &:after {
+    content: "";
+    display: block;
+    height: 210px;
+  }
 }
 
 .sidebar {
@@ -131,8 +150,13 @@ a {
 
 #logo {
   @include span-columns(3);
-  font-size: 36px;
   margin-bottom: 15px;
+  a {
+    text-decoration: none;
+    &:hover {
+      border-bottom: none;
+    }
+  }
 }
 
 #slider {
@@ -146,6 +170,7 @@ a {
     @include span-columns(9);
     font-family: 'Doppio One', 'Arial', 'sans-serif';
     font-size: 1.1em;
+    margin-top: 20px;
 
     ul.outer {
       list-style: none;
@@ -218,7 +243,6 @@ a {
   @include span-columns(4);
 
   .main-content {
-    text-align: justify;
     font-weight: 300;
     padding-top: 10px;
     margin-bottom: 10px;
@@ -312,9 +336,6 @@ a {
 
 #electrical {
   @include span-columns(8);
-  h1 {
-    font-family: 'Doppio One', 'Arial', 'sans-serif';
-  }
 }
 
 #solar {
@@ -324,13 +345,74 @@ a {
  }
 }
 
+dt {
+  display: list-item;
+  list-style-type: disc;
+  margin-left: 50px;
+}
+
+dd {
+  margin: 0 0 10px 50px;
+}
+
 #pools {
  @include span-columns(8);
- h1 {
-   font-family: 'Doppio One', 'Arial', 'sans-serif';
- }
+}
+
+/* technical */
+
+#modules, #inverters, #racking {
+  @include span-columns(4);
+
+  h3 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+  }
+
+  ul {
+    padding-left: 15px;
+    li {
+      padding-top: 5px;
+    }
+  }
+}
+
+/* why */
+
+#safety, #quality, #reliability {
+  @include span-columns(4);
+
+  h2 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+  }
 }
 
 #footer {
+  border-top: 1px solid darken(#efefef, 20%);
   background-color: #efefef;
+  margin-top: 40px;
+  padding: 30px 0 30px 0;
+  height: 170px;
+
+  #home-advisor {
+    @include span-columns(2);
+
+    a {
+      &:hover {
+        border-bottom: none;
+      }
+    }
+  }
+
+  #copy {
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  #nav {
+    margin-top: 75px;
+    text-align: right;
+    font-size: 0.8em;
+  }
 }

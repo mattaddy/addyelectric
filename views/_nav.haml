@@ -1,9 +1,9 @@
 .container
   #top-bar
-    Call 555.555.5555
+    Call 530.710.3619
   #nav-wrapper
     #logo
-      Logo
+      %a{href: '/'}= img '/images/logo2.png', height: '108', width: '200'
     %nav#top-nav
       %ul.outer
         %li
@@ -16,10 +16,19 @@
             %li
               %a{href: '/services/pool'} Pool Solar
         %li
-          %a{href: '/resources'} resources
+          %a{href: '/why-ae'} why ae?
+        %li
+          %a{href: '#', class: 'dropdown-link'} resources
+          %ul.fallback.inner
+            %li
+              %a{href: '/resources/news'} News
+            %li
+              %a{href: '/resources/articles'} Articles
+            %li
+              %a{href: '/resources/technical'} Technical
+            %li
+              %a{href: '/resources/links'} Links
         %li
           %a{href: '/about'} about
         %li
           %a{href: '/contact'} contact
-        %li
-          %a{href: '/why-ae'} why ae?

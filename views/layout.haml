@@ -5,9 +5,10 @@
     %link{href: 'http://fonts.googleapis.com/css?family=Open+Sans:400,300|Doppio+One', rel: 'stylesheet'}
     != css :app
   %body
-    = haml :_nav
 
-    = yield
+    .wrapper
+      = haml :_nav
+      = yield
 
     = haml :_footer
 

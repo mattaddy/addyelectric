@@ -4,6 +4,8 @@ $ ->
     effect: 'sliceDownRight'
     pauseTime: 6000
     controlNav: false
+    nextText: ''
+    prevText: ''
 
 
   $('nav li ul').hide().removeClass('fallback')
@@ -14,3 +16,12 @@ $ ->
   )
 
   $('.dropdown-link').click (e) -> e.preventDefault()
+
+  panels = $('.accordion > dd').hide();
+  $('.accordion > dt > a').click (e) ->
+    e.preventDefault()
+    $this = $(this)
+    $target = $this.parent().next()
+    if(!$target.hasClass('active'))
+       panels.removeClass('active').slideUp('fast')
+       $target.addClass('active').slideDown('fast')

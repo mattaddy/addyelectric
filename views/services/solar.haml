@@ -1,6 +1,57 @@
 .container
   #solar
-    %h1 Solar Photovoltaic
+    %h1 Solar Photovoltaic Services
+    At Addy Electric...
+
+    %dl.accordion
+      %dt
+        %a{href: '#'} Interactive Systems (Grid-Tie)
+      %dd
+        %p
+          The interactive, or grid-tied, system requires an inverter and photovoltaic modules.
+          The system is interconnected to the grid. Unlike the battery back-up system, when
+          there is a power outage, a safety mechanism in the inverter blocks the solar power
+          from backfeeding into your electrical system. Thus the solar system is dependent upon
+          the grid (utility voltage) to operate.
+        %p
+          An array (a group) of solar photovoltaic modules is mounted either on your roof or
+          on the ground. As photons from the sun hit the solar cells in the modules, it
+          produces DC electricity. Wires from the array are directly connected to the inverter.
+          Through the inverter this DC electricity is inverted to AC electricity. Wires are
+          connected from the output of the inverter to an electrical panel on your property.
+          This creates the current path for electricity produced by the sun to flow into your
+          electrical system.
+        %p
+          Whatever power is not consumed in your home is fed back into the grid. This energy
+          is counted as production and is credited to your account. In cases when there is not
+          enough sunlight, such as on a cloudy day or at night, you continue to use the
+          electricity from the utility as needed. A properly-sized system creates the possibility
+          of completely offsetting your electric usage and eliminating your bill.
+
+      %dt
+        %a{href: '#'} Interactive Systems with Battery Back-Up
+      %dd
+        %p
+          An interactive system with battery back-up is a system that interconnects to the grid
+          (utility). It requires batteries, a bi-directional inverter, a standard inverter,
+          and photovoltaic modules. (For DC-coupled systems a charge controller is required.)
+          In this configuration, if there is a utility power outage the bidirectional inverter
+          will disconnect from the grid and create its own “grid,” so to speak. This allows
+          power to be fed to a limited amount of circuits, called critical or protected loads,
+          thus providing some power during utility power outages.
+
+      %dt
+        %a{href: '#'} Stand-Alone Systems
+      %dd
+        %p
+          The stand-alone system is independent from any other electrical production. It
+          requires batteries, a charge controller, inverter and photovoltaic modules. In this
+          set-up there is no interconnection to the utility grid.
+
+      %dt Troubleshooting and Testing
+      %dt Operating and Maintenance
+
+
     %h2 Why Solar Photovoltaic?
     %p
       Solar energy is the most abundant energy resource on earth.
@@ -10,50 +61,5 @@
       percent of the total cost of your system. In the last few years, providers have come
       out with higher efficiency cells and more affordable modules, making solar a great
       option.
-
-    %h2 Types of Systems
-    %p
-      There are three types of solar photovoltaic systems: interactive (grid-tie),
-      interactive with battery back-up, and a stand-alone.
-
-    %h4 Interactive Systems (Grid-Tie)
-    %p
-      The interactive, or grid-tied, system requires an inverter and photovoltaic modules.
-      The system is interconnected to the grid. Unlike the battery back-up system, when
-      there is a power outage, a safety mechanism in the inverter blocks the solar power
-      from backfeeding into your electrical system. Thus the solar system is dependent upon
-      the grid (utility voltage) to operate.
-
-    %h4 Interactive Systems with Battery Back-Up
-    %p
-      An interactive system with battery back-up is a system that interconnects to the grid
-      (utility). It requires batteries, a bi-directional inverter, a standard inverter,
-      and photovoltaic modules. (For DC-coupled systems a charge controller is required.)
-      In this configuration, if there is a utility power outage the bidirectional inverter
-      will disconnect from the grid and create its own “grid,” so to speak. This allows
-      power to be fed to a limited amount of circuits, called critical or protected loads,
-      thus providing some power during utility power outages.
-
-    %h4 Stand-Alone Systems
-    %p
-      The stand-alone system is independent from any other electrical production. It
-      requires batteries, a charge controller, inverter and photovoltaic modules. In this
-      set-up there is no interconnection to the utility grid.
-
-    %h2 How Interactive Systems Work
-    %p
-      An array (a group) of solar photovoltaic modules is mounted either on your roof or
-      on the ground. As photons from the sun hit the solar cells in the modules, it
-      produces DC electricity. Wires from the array are directly connected to the inverter.
-      Through the inverter this DC electricity is inverted to AC electricity. Wires are
-      connected from the output of the inverter to an electrical panel on your property.
-      This creates the current path for electricity produced by the sun to flow into your
-      electrical system.
-    %p
-      Whatever power is not consumed in your home is fed back into the grid. This energy
-      is counted as production and is credited to your account. In cases when there is not
-      enough sunlight, such as on a cloudy day or at night, you continue to use the
-      electricity from the utility as needed. A properly-sized system creates the possibility
-      of completely offsetting your electric usage and eliminating your bill.
 
   = haml :_sidebar
