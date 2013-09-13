@@ -18,7 +18,7 @@ set :branch, "master"
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
-after "deploy", "deploy:cleanup" # keep only the last 5 releases
+after "deploy", "deploy:cleanup"
 
 namespace :deploy do
   %w[start stop restart].each do |command|
@@ -37,6 +37,11 @@ namespace :deploy do
     sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
   end
   after "deploy:setup", "deploy:setup_config"
+
+  task :create_tmp, roles: :web do
+    run "if [ ! -d #{current_path}/tmp/sockets ]; then mkdir -p #{current_path}/tmp/sockets; fi"
+  end
+  after "deploy", "deploy:create_tmp"
 
   desc "Make sure local git is in sync with remote."
   task :check_revision, roles: :web do
