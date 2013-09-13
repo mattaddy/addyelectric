@@ -1,4 +1,4 @@
-@dir = "/home/deployer/apps/addyelectric/"
+@dir = "/home/deployer/apps/addyelectric/current"
 
 worker_processes 2
 working_directory @dir
