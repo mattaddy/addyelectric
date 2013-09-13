@@ -1,6 +1,9 @@
 require "bundler/capistrano"
+require "rvm/capistrano"
 
 server "192.241.148.152", :web, :app, :db, primary: true
+
+set :rvm_ruby_string, "2.0.0@default"
 
 set :application, "addyelectric"
 set :user, "deployer"
