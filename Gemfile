@@ -9,3 +9,7 @@ gem 'coffee-script'
 
 gem 'bourbon'
 gem 'neat'
+
+gem 'capistrano'
+
+gem 'unicorn'
