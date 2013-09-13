@@ -399,19 +399,20 @@ dd {
 }
 
 .quote {
-  position:relative;
-  padding:15px 30px;
-  margin:0;
-  background:#efefef;
-  -webkit-border-radius:10px;
-  -moz-border-radius:10px;
-  border-radius:10px;
+  position: relative;
+  padding: 15px 30px;
+  margin: 0;
+  background: #efefef;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
 }
 
-/* display of quote author (alternatively use a class on the element following the blockquote) */
-.quote + p {margin:15px 0 2em 85px; font-style:italic;}
+.quote + p {
+  margin: 15px 0 2em 85px;
+  font-style: italic;
+}
 
-/* creates the triangle */
 .quote:after {
   content:"";
   position:absolute;
@@ -420,9 +421,25 @@ dd {
   border-width:0 20px 50px 0px;
   border-style:solid;
   border-color:transparent #efefef;
-    /* reduce the damage in FF3.0 */
-    display:block;
-    width:0;
+  display:block;
+  width:0;
+}
+
+/* contact */
+
+#contact {
+  h2 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+  }
+
+  #form {
+    @include span-columns(8);
+  }
+
+  #info {
+    @include span-columns(4);
+  }
 }
 
 /* footer */
