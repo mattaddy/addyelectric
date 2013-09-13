@@ -41,7 +41,7 @@ namespace :deploy do
   task :create_tmp, roles: :web do
     run "if [ ! -d #{current_path}/tmp/sockets ]; then mkdir -p #{current_path}/tmp/sockets; fi"
   end
-  after "deploy", "deploy:create_tmp"
+  before "deploy:restart", "deploy:create_tmp"
 
   desc "Make sure local git is in sync with remote."
   task :check_revision, roles: :web do
