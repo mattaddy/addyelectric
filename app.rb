@@ -66,7 +66,6 @@ module AddyElectric
     get '/files/:type/:name' do
       type = %w[articles technical].include?(params[:type]) ? params[:type] : 'articles'
       path = "/home/deployer/files/#{type}/#{params[:name]}"
-      raise path.inspect
       if File.exists?(path)
         send_file path
       else
