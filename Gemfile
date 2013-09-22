@@ -15,4 +15,6 @@ gem 'rvm-capistrano'
 
 gem 'unicorn'
 
+gem 'pony'
+
 gem 'rake'

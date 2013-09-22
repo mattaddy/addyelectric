@@ -58,5 +58,20 @@ module AddyElectric
     get '/why-ae' do
       haml :why
     end
+
+    post '/inquire' do
+      to = 'danny@addyelectric.com'
+      email = params[:email]
+      name = params[:name]
+      subject = "Website: Inquiry from #{name}"
+      body = "Danny,\n\n"
+      body += "There has been an inquiry from addyelectric.com.\n\n"
+      body += "Name: #{name}\n"
+      body += "Email: #{email}\n"
+      body += "City/Area: #{params[:city]}\n"
+      body += "Utility Provider: #{params[:provider]}\n"
+      body += "Avg. Bill or Kilowatt Hours: #{params[:avg]}"
+      Pony.mail(to: to, from: from, subject: subject, body: body)
+    end
   end
 end
