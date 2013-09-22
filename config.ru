@@ -1,7 +1,11 @@
+require 'rubygems'
 require 'bundler/setup'
+
 require 'sinatra/base'
 require 'sinatra/assetpack'
+
 require 'pony'
+
 require 'sass'
 require 'haml'
 
