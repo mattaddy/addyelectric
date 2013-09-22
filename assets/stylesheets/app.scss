@@ -392,10 +392,29 @@ dd {
 
 #about {
   @include span-columns(7);
+
+  h2 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+  }
 }
 
-#remark {
-  @include span-columns(5);
+#row1 {
+  @include row();
+
+  #remark {
+    @include span-columns(5);
+  }
+}
+
+#testimonies {
+  @include span-columns(12);
+
+  h2 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
 }
 
 .quote {
