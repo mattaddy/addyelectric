@@ -453,11 +453,43 @@ dd {
   }
 
   #form {
-    @include span-columns(8);
+    @include span-columns(6);
   }
 
   #info {
     @include span-columns(4);
+    @include shift();
+  }
+
+  .field {
+    @include row;
+  }
+
+  label {
+    display: inline-block;
+    vertical-align: top;
+    width: 100px;
+  }
+
+  input[type="text"], textarea {
+    width: 350px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  textarea {
+    height: 100px;
+    margin-bottom: 10px;
+  }
+
+  input[type="submit"] {
+    @include cupid-green;
   }
 }
 
