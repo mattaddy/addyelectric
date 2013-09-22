@@ -63,6 +63,17 @@ module AddyElectric
       haml :thanks
     end
 
+    get '/files/:type/:name' do
+      type = %w[articles technical].include?(params[:type]) ? params[:type] : 'articles'
+      path = "/home/deployer/files/#{type}/#{params[:name]}"
+      raise path.inspect
+      if File.exists?(path)
+        send_file path
+      else
+        status 404
+      end
+    end
+
     post '/inquire' do
       to = 'danny@addyelectric.com'
       email = params[:email]
