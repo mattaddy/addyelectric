@@ -59,11 +59,15 @@ module AddyElectric
       haml :why
     end
 
+    get '/thanks' do
+      haml :thanks
+    end
+
     post '/inquire' do
       to = 'danny@addyelectric.com'
       email = params[:email]
       name = params[:name]
-      subject = "Website: Inquiry from #{name}"
+      subject = "Website: Solar inquiry from #{name}"
       body = "Danny,\n\n"
       body += "There has been an inquiry from addyelectric.com.\n\n"
       body += "Name: #{name}\n"
@@ -72,6 +76,7 @@ module AddyElectric
       body += "Utility Provider: #{params[:provider]}\n"
       body += "Avg. Bill or Kilowatt Hours: #{params[:avg]}"
       Pony.mail(to: to, from: 'system@addyelectric.com', subject: subject, body: body)
+      redirect to('/thanks')
     end
 
     post '/contact' do
@@ -86,6 +91,7 @@ module AddyElectric
       body += "Phone: #{params[:phone]}\n"
       body += "Message: #{params[:message]}\n"
       Pony.mail(to: to, from: 'system@addyelectric.com', subject: subject, body: body)
+      redirect to('/thanks')
     end
   end
 end
