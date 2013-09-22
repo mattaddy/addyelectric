@@ -71,7 +71,21 @@ module AddyElectric
       body += "City/Area: #{params[:city]}\n"
       body += "Utility Provider: #{params[:provider]}\n"
       body += "Avg. Bill or Kilowatt Hours: #{params[:avg]}"
-      Pony.mail(to: to, from: from, subject: subject, body: body)
+      Pony.mail(to: to, from: name, subject: subject, body: body)
+    end
+
+    post '/contact' do
+      to = 'danny@addyelectric.com'
+      email = params[:email]
+      name = params[:name]
+      subject = "Website: Contact from #{name}"
+      body = "Danny,\n\n"
+      body += "There has been a message received from addyelectric.com.\n\n"
+      body += "Name: #{name}\n"
+      body += "Email: #{email}\n"
+      body += "Phone: #{params[:phone]}\n"
+      body += "Message: #{params[:message]}\n"
+      Pony.mail(to: to, from: name, subject: subject, body: body)
     end
   end
 end
