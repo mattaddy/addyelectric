@@ -63,6 +63,10 @@ module AddyElectric
       haml :thanks
     end
 
+    get '/privacy-policy' do
+      haml :privacy_policy
+    end
+
     get '/files/:type/:name' do
       type = %w[articles technical].include?(params[:type]) ? params[:type] : 'articles'
       path = "/home/deployer/files/#{type}/#{params[:name]}"

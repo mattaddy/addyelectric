@@ -532,3 +532,9 @@ dd {
     padding-bottom: 5px;
   }
 }
+
+/* privacy policy */
+
+#privacy-policy {
+  @include span-columns(12);
+}
